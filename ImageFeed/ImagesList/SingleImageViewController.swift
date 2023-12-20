@@ -21,6 +21,6 @@ class SingleImageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = image
+//        imageView.image = image
     }
 }
