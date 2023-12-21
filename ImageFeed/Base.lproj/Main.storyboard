@@ -88,8 +88,8 @@
                         </tabBarAppearance>
                     </tabBar>
                     <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="UGi-yY-i4T"/>
                         <segue destination="vIU-L8-dhb" kind="relationship" relationship="viewControllers" id="hmd-vg-mQ8"/>
-                        <segue destination="Jfq-fa-sh2" kind="relationship" relationship="viewControllers" id="NTu-rv-Laa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0G-JG-K2Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -173,10 +173,11 @@
                             <constraint firstAttribute="trailing" secondItem="3RS-bg-59f" secondAttribute="trailing" id="s9C-0P-sXb"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="TabBarFeedActive" id="9Qc-JK-FnF"/>
                     <navigationItem key="navigationItem" id="tue-Bn-Vrq"/>
                     <connections>
                         <outlet property="tableView" destination="3RS-bg-59f" id="p1y-9f-8eK"/>
-                        <segue destination="uCN-Vg-pDh" kind="show" identifier="ShowSingleImage" id="XbU-l7-83F"/>
+                        <segue destination="uCN-Vg-pDh" kind="presentation" identifier="ShowSingleImage" id="XbU-l7-83F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -191,11 +192,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NH-XV-3TJ" userLabel="ButtonBack">
-                                <rect key="frame" x="8" y="-8" width="24" height="24"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZTz-gk-DnW" userLabel="Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NH-XV-3TJ" userLabel="ButtonBack">
+                                <rect key="frame" x="8" y="8" width="48" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="K4y-Xv-yTx"/>
-                                    <constraint firstAttribute="height" constant="24" id="YnA-ET-nDS"/>
+                                    <constraint firstAttribute="width" constant="48" id="K4y-Xv-yTx"/>
+                                    <constraint firstAttribute="height" constant="48" id="YnA-ET-nDS"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -206,16 +210,15 @@
                                     <action selector="buttonBack:" destination="uCN-Vg-pDh" eventType="touchUpInside" id="6bG-0W-rXy"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZTz-gk-DnW" userLabel="Image View">
-                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D75-Il-Mbw"/>
                         <color key="backgroundColor" name="YP Black"/>
                         <constraints>
                             <constraint firstItem="ZTz-gk-DnW" firstAttribute="leading" secondItem="D75-Il-Mbw" secondAttribute="leading" id="G4n-wl-diG"/>
-                            <constraint firstItem="ZTz-gk-DnW" firstAttribute="top" secondItem="c5a-un-E5Z" secondAttribute="topMargin" id="KvW-wG-8WA"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="ZTz-gk-DnW" secondAttribute="bottom" id="fUB-Tm-Ll4"/>
+                            <constraint firstItem="ZTz-gk-DnW" firstAttribute="top" secondItem="c5a-un-E5Z" secondAttribute="top" id="KvW-wG-8WA"/>
+                            <constraint firstItem="0NH-XV-3TJ" firstAttribute="top" secondItem="D75-Il-Mbw" secondAttribute="top" constant="8" id="PPQ-Ik-Csh"/>
+                            <constraint firstItem="0NH-XV-3TJ" firstAttribute="leading" secondItem="D75-Il-Mbw" secondAttribute="leading" constant="8" id="c5P-GU-P5D"/>
+                            <constraint firstAttribute="bottom" secondItem="ZTz-gk-DnW" secondAttribute="bottom" id="fUB-Tm-Ll4"/>
                             <constraint firstItem="ZTz-gk-DnW" firstAttribute="trailing" secondItem="D75-Il-Mbw" secondAttribute="trailing" id="nrb-e5-PuC"/>
                         </constraints>
                     </view>
@@ -224,30 +227,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apa-O6-GKX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2031.8840579710147" y="-3.3482142857142856"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rjd-34-laZ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jfq-fa-sh2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="TabBarFeedActive" id="hvB-52-qjg"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2nq-Fx-Drb">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <navigationBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" name="YP Black"/>
-                        </navigationBarAppearance>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Pzp-Qk-QOu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5GJ-Eq-89Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="200.00000000000003" y="-3.3482142857142856"/>
         </scene>
     </scenes>
     <resources>
